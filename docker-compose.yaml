@@ -1,0 +1,18 @@
+services:
+  frontend:
+    image: jiyoungg/frontend:1
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - cnet
+
+  backend:
+    image: jiyoungg/backend:1
+    networks:
+      - cnet
+
+networks:
+  cnet:
+    external: true
